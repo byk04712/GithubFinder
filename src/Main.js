@@ -12,8 +12,10 @@ import React, {
   Platform
 } from 'react-native';
 
-var api = require('./Utils/api.js');
-var Dashboard = require('./Components/Dashboard.js');
+import api from './Utils/api.js';
+import Dashboard  from './Components/Dashboard.js';
+import Loading from './Components/Loading.js';
+import * as Screen from './Utils/Screen.js';
 
 export default class Main extends Component {
 
@@ -27,17 +29,10 @@ export default class Main extends Component {
 	}
 
 	render() {
-		var showErr = (this.state.error ? <Text>{this.state.error}</Text> : <View></View>);
+		var showErr = (this.state.error ? <Text style={styles.errText}>{this.state.error}</Text> : null);
 		var loadingView = null;
 		if (this.state.isLoading) {
-			if(Platform.OS != 'android') {
-				loadingView = <ActivityIndicatorIOS
-		    		animating={this.state.isLoading}
-		    		color='green'
-		    		size='large' />
-			} else {
-				loadingView = <View style={styles.load}><Text>查询中...</Text></View>
-			}
+			loadingView = <Loading/>
 		}
 		return (
 		    <View style={styles.container}>
@@ -51,7 +46,7 @@ export default class Main extends Component {
 		    		<Text>开始查找</Text>
 		    	</TouchableOpacity>
 		    	{loadingView}
-		    	{showErr}
+		    	<View style={styles.showErrView}>{showErr}</View>
 		    </View>
 		);
 	}
@@ -130,5 +125,13 @@ const styles = StyleSheet.create({
 		height: 50,
 		alignItems: 'center',
 		justifyContent: 'center'
+	},
+	showErrView: {
+		height: 50,
+		width: Screen.width,
+		alignItems: 'center'
+	},
+	errText: {
+		color: '#ff6600'
 	}
 });

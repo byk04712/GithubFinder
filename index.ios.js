@@ -5,6 +5,6 @@ import React, {
   Component
 } from 'react-native';
 
-import Index from './App/Index.js';
+import Index from './src/Index.js';
 
 AppRegistry.registerComponent('GithubFinder', () => Index);
