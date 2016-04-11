@@ -29,11 +29,8 @@ export default class Main extends Component {
 	}
 
 	render() {
-		var showErr = (this.state.error ? <Text style={styles.errText}>{this.state.error}</Text> : null);
-		var loadingView = null;
-		if (this.state.isLoading) {
-			loadingView = <Loading/>
-		}
+		var showErr = this.state.error ? <Text style={styles.errText}>{this.state.error}</Text> : null;
+		var loadingView = this.state.isLoading ? <Loading/> : null;
 		return (
 		    <View style={styles.container}>
 		    	<Text style={styles.title}>到github上寻找大神</Text>
@@ -45,8 +42,8 @@ export default class Main extends Component {
 		    	<TouchableOpacity onPress={this.handleSubmit.bind(this)} style={styles.btnBox}>
 		    		<Text>开始查找</Text>
 		    	</TouchableOpacity>
-		    	{loadingView}
-		    	<View style={styles.showErrView}>{showErr}</View>
+		    	<View style={styles.msgView}>{loadingView}</View>
+		    	<View style={styles.msgView}>{showErr}</View>
 		    </View>
 		);
 	}
@@ -59,10 +56,10 @@ export default class Main extends Component {
 
 	handleSubmit() {
 		const { route, navigator } = this.props;
-		//或者写成 const navigator = this.props.navigator;
 		//update our indicatorIOS spinner
 		this.setState({
-			isLoading: true
+			isLoading: true,
+			error: false
 		});
 		//fetch data from github
 		api.getBio(this.state.username).
@@ -126,10 +123,11 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center'
 	},
-	showErrView: {
+	msgView: {
 		height: 50,
 		width: Screen.width,
-		alignItems: 'center'
+		alignItems: 'center',
+		justifyContent: 'center'
 	},
 	errText: {
 		color: '#ff6600'
