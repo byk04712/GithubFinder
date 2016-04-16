@@ -29,12 +29,6 @@ class DashboardObj extends BaseLogicObj {
 		Actions.repos({userInfo});
 	}
 
-	/**
-	 * 返回
-	 */
-	goBack() {
-		this.getProps().routes.pop();
-	}
 }
 
 module.exports = DashboardObj;

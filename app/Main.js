@@ -73,7 +73,7 @@ class MessageView extends Component {
 	render() {
 		return (
 			<View style={styles.messageView}>
-				<Text style={[styles.messageText, {color: this.props.disable ? 'green' : 'red'}]}>{this.props.message}</Text>
+				<Text style={[styles.messageText, {color: this.props.disable ? '#777' : '#FBA512'}]}>{this.props.message}</Text>
 			</View>
 		);
 	}
@@ -82,35 +82,35 @@ class MessageView extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		marginTop: 260,
+		marginTop: 240,
 		alignItems: 'center'
 	},
 	title: {
-		fontSize: 22,
+		fontSize: 24,
 		color: '#555'
 	},
 	inputView: {
 		borderWidth: 1,
-		width: 300,
-		height: 40,
+		width: 350,
+		height: 50,
 		marginTop: 30,
 		marginBottom: 15
 	},
 	input: {
-		height: 40,
+		height: 50,
 		padding: 10,
-		width: 300,
+		width: 350,
 		borderWidth: 0,
-		fontSize: 16
+		fontSize: 20
 	},
 	btn: {
-		width: 300,
-		height: 40,
-		padding: 10,
-		color: '#FFF'
+		width: 350,
+		padding: 12,
+		color: '#FFF',
+		fontSize: 20
 	},
 	messageView: {
-		width: 300,
+		width: 350,
 		height: 100,
 		marginTop: 20,
 		justifyContent: 'center',

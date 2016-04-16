@@ -1,20 +1,10 @@
 'use strict';
 
 import React, { Component, StyleSheet, WebView, View, Text } from 'react-native';
-import WebObj from '../logic/WebObj.js';
 import Button from 'react-native-button';
 import Loading from '../components/Loading.js';
 
 class Web extends Component {
-
-	constructor(props) {
-		super(props);
-	}
-
-	componentWillMount() {
-		//初始化业务逻辑对象
-		this.webObj = new WebObj(this);
-	}
 
 	render() {
 		return (

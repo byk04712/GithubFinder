@@ -37,7 +37,6 @@ class MainContainer extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<View style={styles.block}/>
 				<Router>
 					<Schema name='modal' sceneConfig={Animations.FlatFloatFromBottom} navBar={NavBarModal} />
 					<Schema name='default' sceneConfig={Animations.FlatFloatFromRight} navBar={NavBar} />
@@ -49,7 +48,7 @@ class MainContainer extends Component {
                     <Route name='profile' component={Profile} title='详细信息' hideNavBar={true} schema='modal'/>
                     <Route name='notes' component={Notes} title='聊天'/>
                     <Route name='repos' component={Repositories} schema='defalut' hideNavBar={true} title='代码库'/>
-                    <Route name='web' component={Web} schema='modal' hideNavBar={false} title='web页'/>
+                    <Route name='web' component={Web} schema='modal' hideNavBar={false}/>
 				</Router>
 			</View>
 		);
@@ -58,8 +57,17 @@ class MainContainer extends Component {
 }
 
 const styles = StyleSheet.create({
-	container: {flex:1},
-	block: {position:'absolute',left:0,right:0,top:0,bottom:0,backgroundColor:'#F5FCFF'}
+	container: {
+		flex: 1
+	},
+	block: {
+		position: 'absolute',
+		left: 0,
+		right: 0,
+		top: 0,
+		bottom: 0,
+		backgroundColor: '#F5FCFF'
+	}
 });
 
 module.exports = Index;

@@ -19,7 +19,7 @@ class Dashboard extends Component {
 
 	render() {
 		return (
-			<ScrollView style={styles.container}>
+			<ScrollView containerStyle={styles.container}>
 				<Portrait uri={this.props.res.avatar_url}/>
 				<ButtonList
 					goToProfile={this.dashboardObj.goToProfile.bind(this.dashboardObj)}
@@ -62,21 +62,20 @@ class ButtonList extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		flexDirection: 'column'
+		flexDirection: 'column',
+		backgroundColor: 'red'
 	},
 	protrait: {
 		flex: 1
 	},
 	image: {
 		resizeMode: 'stretch',
-		height: 400
+		height: 450
 	},
 	buttonListView: {
-		flex: 1,
-		bottom: 0
+		flex: 1
 	},
 	button: {
-		flex: 1,
 		padding: 14,
 		color: '#FFF'
 	}

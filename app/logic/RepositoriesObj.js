@@ -23,12 +23,6 @@ class RepositoriesObj extends BaseLogicObj {
 		Actions.web({url: html_url});
 	}
 
-	/**
-	 * 返回
-	 */
-	goBack() {
-		this.getProps().routes.pop();
-	}
 }
 
 module.exports = RepositoriesObj;
