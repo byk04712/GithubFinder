@@ -52,7 +52,7 @@ class NavBar extends Component {
 	render() {
 		let Actions = this.props.routes;
 		let leftButtonConfig = {
-			title: 'Left',
+			title: '返回',
 			handler: this.props.onPrev || Actions.pop
 		};
 		return <NavBarBase customNext={<View/>} {...this.props} leftButton={leftButtonConfig}/>
@@ -65,7 +65,7 @@ class NavBarModal extends Component {
    render() {
 		let Actions = this.props.routes;
 		let rightButtonConfig = {
-			title: 'Close',
+			title: '关闭',
 			handler: this.props.onNext || Actions.pop
 		};
 		return <NavBarBase customPrev={<View/>} nextTitle="Close" {...this.props} rightButton={rightButtonConfig}/>

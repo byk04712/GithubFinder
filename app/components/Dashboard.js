@@ -37,7 +37,7 @@ class Portrait extends Component {
 	render() {
 		return (
 			<View style={styles.protrait}>
-				<Image source={{uri:this.props.uri}} style={{flex:1}}/>
+				<Image source={{uri:this.props.uri}} style={styles.image}/>
 			</View>
 		);
 	}
@@ -65,12 +65,18 @@ const styles = StyleSheet.create({
 		flexDirection: 'column'
 	},
 	protrait: {
+		flex: 1
+	},
+	image: {
+		resizeMode: 'stretch',
 		height: 400
 	},
 	buttonListView: {
-		flex: 1
+		flex: 1,
+		bottom: 0
 	},
 	button: {
+		flex: 1,
 		padding: 14,
 		color: '#FFF'
 	}

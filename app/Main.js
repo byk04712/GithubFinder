@@ -52,7 +52,12 @@ class SearchView extends Component {
 		    <View style={{alignItems: 'center'}}>
 		    	<Text style={styles.title}>到github上寻找大神</Text>
 		    	<View style={[styles.inputView, {borderColor: color}]}>
-		    		<TextInput style={styles.input} defaultValue={this.props.keyword} editable={!this.props.disable} onChangeText={this.props.changeText} placeholder='输入大神的github帐号'/>
+		    		<TextInput style={styles.input}
+		    			defaultValue={this.props.keyword}
+		    			editable={!this.props.disable}
+		    			onChangeText={this.props.changeText}
+		    			placeholder='输入大神的github帐号'
+		    			underlineColorAndroid='transparent'/>
 		    	</View>
 		    	<Button activeOpacity={1}
 		    		disabled={this.props.disable}
@@ -77,7 +82,7 @@ class MessageView extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		marginTop: 200,
+		marginTop: 260,
 		alignItems: 'center'
 	},
 	title: {
@@ -88,12 +93,14 @@ const styles = StyleSheet.create({
 		borderWidth: 1,
 		width: 300,
 		height: 40,
-		padding: 10,
 		marginTop: 30,
 		marginBottom: 15
 	},
 	input: {
-		flex: 1,
+		height: 40,
+		padding: 10,
+		width: 300,
+		borderWidth: 0,
 		fontSize: 16
 	},
 	btn: {
