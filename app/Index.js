@@ -32,6 +32,8 @@ class Index extends Component {
 	}
 }
 
+import Loading from './components/Loading.js';
+
 class MainContainer extends Component {
 
 	render() {

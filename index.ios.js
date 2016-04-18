@@ -5,6 +5,11 @@ import React, {
   Component
 } from 'react-native';
 
-import Index from './app/Index.js';
+//工程1
+// import Index from './app/Index.js';
+// AppRegistry.registerComponent('GithubFinder', () => Index);
 
-AppRegistry.registerComponent('GithubFinder', () => Index);
+
+//工程2
+import AppContainer from './app1/containers';
+AppRegistry.registerComponent('GithubFinder', () => AppContainer);
