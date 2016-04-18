@@ -11,8 +11,6 @@
     "react-native-button": "^1.4.2",
     "react-native-navbar": "^1.4.2",
     "react-native-redux-router": "^1.0.6",
-    "react-native-router-redux": "^0.2.2",
-    "react-native-tabs": "^1.0.5",
     "redux-logger": "^2.6.1"
   }
 }
