@@ -27,7 +27,7 @@ class NavBarBase extends Component {
 		};
 		let titleConfig = {
 			title : this.props.title || '',
-			tintColor: this.props.titleColor || '#333'
+			tintColor: this.props.tintColor || '#333'
 		}
 		let style;
 		if(statusBarConfig.hidden) {
@@ -79,6 +79,7 @@ class NavBar extends Component {
 		let Actions = this.props.routes;
 		let leftButtonConfig = {
 			title: '返回',
+			tintColor: '#FFF',
 			handler: this.props.onPrev || Actions.pop
 		};
 		return <NavBarBase {...this.props} leftButton={leftButtonConfig}/>
@@ -92,6 +93,7 @@ class NavBarModal extends Component {
 		let Actions = this.props.routes;
 		let rightButtonConfig = {
 			title: '关闭',
+			tintColor: '#FFF',
 			handler: this.props.onNext || Actions.pop
 		};
 		return <NavBarBase {...this.props} rightButton={rightButtonConfig}/>

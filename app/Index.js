@@ -21,7 +21,29 @@ import Repositories from './components/Repositories.js';
 import Web from './components/Web.js';
 import Loading from './components/Loading.js';
 
-import { NavBar, NavBarModal } from './components/NavBar.js';
+import { NavBar, NavBarModal, NavBarBase } from './components/NavBar.js';
+
+const modalConfig = {
+	sceneConfig: Animations.FlatFloatFromBottom,
+	navBar: NavBarModal,
+	tintColor: '#FFF'
+}
+
+const defaultConfig = {
+	sceneConfig: Animations.FlatFloatFromRight,
+	navBar: NavBar,
+	tintColor: '#FFF'
+}
+
+const basicConfig = {
+	navBar: NavBarBase,
+	tintColor: '#FFF'
+}
+
+const tabConfig = {
+	navBar: NavBar,
+	tintColor: '#FFF'
+}
 
 /**
  * 项目主框架
@@ -42,12 +64,12 @@ class MainContainer extends Component {
 		return (
 			<View style={styles.container}>
 				<Router>
-					<Schema name='modal' sceneConfig={Animations.FlatFloatFromBottom} navBar={NavBarModal} />
-					<Schema name='default' sceneConfig={Animations.FlatFloatFromRight} navBar={NavBar} />
-					<Schema name='withoutAnimation' navBar={NavBar} />
-					<Schema name='tab' navBar={NavBar} />
+					<Schema name='modal' {...modalConfig} />
+					<Schema name='default' {...defaultConfig} />
+					<Schema name='basic' {...basicConfig} />
+					<Schema name='tab' {...tabConfig} />
 
-                    <Route name='main' component={Main} initial={true} hideNavBar={true} title='首页'/>
+                    <Route name='main' component={Main} initial={true} schema='basic' hideNavBar={false} title='首页'/>
                     <Route name='dashboard' component={Dashboard} title='用户信息' schema='default'/>
                     <Route name='profile' component={Profile} title='详细信息' hideNavBar={true} schema='modal'/>
                     <Route name='notes' component={Notes} title='聊天'/>
@@ -63,14 +85,6 @@ class MainContainer extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1
-	},
-	block: {
-		position: 'absolute',
-		left: 0,
-		right: 0,
-		top: 0,
-		bottom: 0,
-		backgroundColor: '#F5FCFF'
 	}
 });
 

@@ -31,6 +31,7 @@ class Main extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
+				<View style={{height:20,backgroundColor:'#0DB0D9'}}/>
 				<SearchView
 					{...this.state}
 					changeText={this.searchObj.changeText.bind(this.searchObj)}
@@ -90,7 +91,7 @@ class MessageView extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		marginTop: 240,
+		paddingTop: 160,
 		alignItems: 'center'
 	},
 	title: {
