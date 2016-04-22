@@ -9,7 +9,7 @@ class Dashboard extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			userInfo: props.res//用户信息
+			userInfo: props.res 	//用户信息
 		}
 	}
 

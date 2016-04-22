@@ -4,7 +4,7 @@ import React, { Component, StyleSheet, Platform, View } from 'react-native';
 import NavigationBar from 'react-native-navbar';
 
 /**
- * 导航栏
+ * 顶部导航栏
  */
 class NavBarBase extends Component {
 
