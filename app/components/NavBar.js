@@ -10,10 +10,10 @@ class NavBarBase extends Component {
 
 	onPrev() {
 		let Actions = this.props.routes;
-		if (this.props.onPrev) {
-			this.props.onPrev();
-			return;
-		}
+		// if (this.props.onPrev) {
+		// 	this.props.onPrev();
+		// 	return;
+		// }
 		if (this.props.navigator && this.props.navigator.getCurrentRoutes().length > 1) {
 			Actions.pop();
 		}
