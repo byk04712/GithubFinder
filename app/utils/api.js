@@ -1,3 +1,6 @@
+/**
+ * 数据接口API
+ */
 var api = {
 	getBio(username) {
 		username = username.toLowerCase().trim();

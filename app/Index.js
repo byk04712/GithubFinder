@@ -19,9 +19,13 @@ import Profile from './components/Profile.js';
 import Notes from './components/Notes.js';
 import Repositories from './components/Repositories.js';
 import Web from './components/Web.js';
+import Loading from './components/Loading.js';
 
 import { NavBar, NavBarModal } from './components/NavBar.js';
 
+/**
+ * 项目主框架
+ */
 class Index extends Component {
 	render() {
 		return (
@@ -31,8 +35,6 @@ class Index extends Component {
 		);
 	}
 }
-
-import Loading from './components/Loading.js';
 
 class MainContainer extends Component {
 

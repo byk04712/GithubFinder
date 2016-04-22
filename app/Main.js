@@ -44,6 +44,9 @@ class Main extends Component {
 	
 }
 
+/**
+ * 查询输入框
+ */
 class SearchView extends Component {
 
 	render() {
@@ -69,7 +72,11 @@ class SearchView extends Component {
 	
 }
 
+/**
+ * 显示消息
+ */
 class MessageView extends Component {
+
 	render() {
 		return (
 			<View style={styles.messageView}>
@@ -77,6 +84,7 @@ class MessageView extends Component {
 			</View>
 		);
 	}
+	
 }
 
 const styles = StyleSheet.create({

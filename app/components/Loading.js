@@ -2,6 +2,9 @@
 
 import React, { Component, StyleSheet, View, Text, PropTypes } from 'react-native';
 
+/**
+ * 加载中组件
+ */
 class Loading extends Component {
 
 	static propTypes = {

@@ -4,6 +4,9 @@ import React, { Component, StyleSheet, WebView, View, Text } from 'react-native'
 import Button from 'react-native-button';
 import Loading from '../components/Loading.js';
 
+/**
+ * 
+ */
 class Web extends Component {
 
 	render() {

@@ -2,7 +2,6 @@
 
 import React, { Component, StyleSheet, Platform, View } from 'react-native';
 import NavigationBar from 'react-native-navbar';
-import { Router, Route, Animations, Schema } from 'react-native-redux-router';
 
 /**
  * 导航栏
@@ -53,6 +52,9 @@ class NavBarBase extends Component {
 		);
 	}
 
+	/**
+	 * 针对android的返回键
+	 */
     componentDidMount() {
     	if (Platform.OS === 'android') {
 			React.BackAndroid.addEventListener('hardwareBackPress', function() {
@@ -61,6 +63,9 @@ class NavBarBase extends Component {
 		}
     }
 
+	/**
+	 * 针对android的返回键
+	 */
     componentWillUnmount() {
     	if (Platform.OS === 'android') {
 			React.BackAndroid.removeEventListener('hardwareBackPress');
