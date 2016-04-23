@@ -1,7 +1,7 @@
 # GithubFinder
 一款基于React Native开发的项目，一份代码可运行在ios和android上。
 
-![项目简介](https://github.com/byk04712/GithubFinder/blob/master/introduce/clip.gif)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/introduce.gif)
 
 ---
 
