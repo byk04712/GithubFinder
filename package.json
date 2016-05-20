@@ -9,6 +9,7 @@
     "react": "^0.14.8",
     "react-native": "^0.24",
     "react-native-button": "^1.4.2",
+    "react-native-code-push": "^1.11.0-beta",
     "react-native-navbar": "^1.4.2",
     "react-native-redux-router": "^1.0.6",
     "redux-logger": "^2.6.1"

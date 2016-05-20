@@ -8,8 +8,8 @@
  */
 
 #import "AppDelegate.h"
-
 #import "RCTRootView.h"
+#import "CodePush.h"
 
 @implementation AppDelegate
 
@@ -31,7 +31,7 @@
    * on the same Wi-Fi network.
    */
 
-  jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
+//  jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
 
   /**
    * OPTION 2
@@ -43,6 +43,13 @@
 
 //   jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 
+  #ifdef DEBUG
+    jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
+  #else
+    jsCodeLocation = [CodePush bundleURL];
+  #endif
+  
+  
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"GithubFinder"
                                                initialProperties:nil

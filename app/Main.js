@@ -1,9 +1,12 @@
 'use strict';
 
-import React, { Component, StyleSheet, View, TextInput, Text } from 'react-native';
+import React, { Component, StyleSheet, View, TextInput, Dimensions, Text } from 'react-native';
 
 import Button from 'react-native-button';
 import SearchObj from './logic/SearchObj.js';
+import packageJson from '../package.json';
+
+const {width, height} = Dimensions.get('window');
 
 /**
  * 首页
@@ -39,6 +42,9 @@ class Main extends Component {
 				<MessageView
 					disable={this.state.disable}
 					message={this.state.msg}/>
+				<View style={styles.footer}>
+					<Text style={styles.version}>{'版本：' + packageJson.version}</Text>
+				</View>
 			</View>
 		);
 	}
@@ -127,6 +133,18 @@ const styles = StyleSheet.create({
 	},
 	messageText: {
 		fontSize: 16
+	},
+	footer: {
+		position: 'absolute',
+		bottom: 0,
+		width,
+		height: 40,
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+	version: {
+		fontSize: 14,
+		color: '#999'
 	}
 });
 
