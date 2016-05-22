@@ -1,10 +1,11 @@
 'use strict';
 
-import React, { Component, StyleSheet, View, TextInput, Dimensions, Text } from 'react-native';
+import React, { Component, StyleSheet, View, TextInput, Dimensions, Image, Text } from 'react-native';
 
 import Button from 'react-native-button';
 import SearchObj from './logic/SearchObj.js';
 import packageJson from '../package.json';
+import codePush from 'react-native-code-push';
 
 const {width, height} = Dimensions.get('window');
 
@@ -33,8 +34,7 @@ class Main extends Component {
 
 	render() {
 		return (
-			<View style={styles.container}>
-				<View style={{height:20,backgroundColor:'#0DB0D9'}}/>
+			<Image style={styles.container} source={{uri:'http://cdnq.duitang.com/uploads/item/201308/05/20130805143313_3Aedy.thumb.700_0.jpeg'}}>
 				<SearchView
 					{...this.state}
 					changeText={this.searchObj.changeText.bind(this.searchObj)}
@@ -45,8 +45,12 @@ class Main extends Component {
 				<View style={styles.footer}>
 					<Text style={styles.version}>{'版本：' + packageJson.version}</Text>
 				</View>
-			</View>
+			</Image>
 		);
+	}
+
+	componentDidMount() {
+		codePush.sync();
 	}
 	
 }
@@ -59,7 +63,7 @@ class SearchView extends Component {
 	render() {
 		let color = this.props.disable ? '#bbb' : '#00B7C3';
 		return (
-		    <View style={{alignItems: 'center'}}>
+		    <View style={styles.searchContainer}>
 		    	<Text style={styles.title}>到github上寻找大神</Text>
 		    	<View style={[styles.inputView, {borderColor: color}]}>
 		    		<TextInput style={styles.input}
@@ -100,13 +104,19 @@ const styles = StyleSheet.create({
 		paddingTop: 160,
 		alignItems: 'center'
 	},
+	searchContainer: {
+		width,
+		alignItems: 'center',
+		paddingVertical: 30,
+		backgroundColor: 'rgba(255,255,255,.6)'
+	},
 	title: {
 		fontSize: 24,
 		color: '#555'
 	},
 	inputView: {
 		borderWidth: 1,
-		width: 350,
+		width: width - 40,
 		height: 50,
 		marginTop: 30,
 		marginBottom: 15
@@ -119,7 +129,7 @@ const styles = StyleSheet.create({
 		fontSize: 20
 	},
 	btn: {
-		width: 350,
+		width: width - 40,
 		padding: 12,
 		color: '#FFF',
 		fontSize: 20

@@ -69,7 +69,7 @@ class MainContainer extends Component {
 					<Schema name='basic' {...basicConfig} />
 					<Schema name='tab' {...tabConfig} />
 
-                    <Route name='main' component={Main} initial={true} schema='basic' hideNavBar={false} title='首页'/>
+                    <Route name='main' component={Main} initial={true} schema='basic' hideNavBar={true} title='首页'/>
                     <Route name='dashboard' component={Dashboard} title='用户信息' schema='default'/>
                     <Route name='profile' component={Profile} title='详细信息' hideNavBar={true} schema='modal'/>
                     <Route name='notes' component={Notes} title='聊天'/>
