@@ -1,8 +1,10 @@
 'use strict';
 
-import React, { Component, StyleSheet, ScrollView, View, Image } from 'react-native';
-import Button from 'react-native-button';
+import React, { Component, StyleSheet, View, Dimensions, Image, TouchableOpacity, Text } from 'react-native';
 import DashboardObj from '../logic/DashboardObj.js';
+
+const {width, height} = Dimensions.get('window');
+const statusBarHeight = 60;
 
 class Dashboard extends Component {
 
@@ -19,14 +21,14 @@ class Dashboard extends Component {
 
 	render() {
 		return (
-			<ScrollView containerStyle={styles.container}>
+			<View style={styles.container}>
 				<Portrait uri={this.props.res.avatar_url}/>
 				<ButtonList
 					goToProfile={this.dashboardObj.goToProfile.bind(this.dashboardObj)}
 					goToNotes={this.dashboardObj.goToNotes.bind(this.dashboardObj)}
 					goToRepos={this.dashboardObj.goToRepos.bind(this.dashboardObj)}
 					goBack={this.dashboardObj.goBack.bind(this.dashboardObj)}/>
-			</ScrollView>
+			</View>
 		);
 	}
 	
@@ -48,11 +50,38 @@ class ButtonList extends Component {
 
 	render() {
 		return (
-			<View style={styles.buttonListView}>
-				<Button activeOpacity={.7} style={[styles.button, {backgroundColor:'#FFD147'}]} onPress={this.props.goToProfile}>查看大神信息</Button>
-				<Button activeOpacity={.7} style={[styles.button, {backgroundColor:'#00CC99'}]} onPress={this.props.goToNotes}>给大神留言</Button>
-				<Button activeOpacity={.7} style={[styles.button, {backgroundColor:'#339966'}]} onPress={this.props.goToRepos}>查看大神代码库</Button>
-				<Button activeOpacity={.7} style={[styles.button, {backgroundColor:'#999999'}]} onPress={this.props.goBack}>返回</Button>
+			<View>
+				<View style={[styles.buttonView, {backgroundColor:'#FFD147'}]}>
+					<TouchableOpacity
+						activeOpacity={.7}
+						onPress={this.props.goToProfile}>
+						<Text style={styles.buttonText}>查看大神信息</Text>
+					</TouchableOpacity>
+				</View>
+
+				<View style={[styles.buttonView, {backgroundColor:'#00CC99'}]}>
+					<TouchableOpacity
+						activeOpacity={.7}
+						onPress={this.props.goToNotes}>
+						<Text style={styles.buttonText}>给大神留言</Text>
+					</TouchableOpacity>
+				</View>
+
+				<View style={[styles.buttonView, {backgroundColor:'#339966'}]}>
+					<TouchableOpacity
+						activeOpacity={.7}
+						onPress={this.props.goToRepos}>
+						<Text style={styles.buttonText}>查看大神代码库</Text>
+					</TouchableOpacity>
+				</View>
+
+				<View style={[styles.buttonView, {backgroundColor:'#999999'}]}>
+					<TouchableOpacity
+						activeOpacity={.7}
+						onPress={this.props.goBack}>
+						<Text style={styles.buttonText}>返回</Text>
+					</TouchableOpacity>
+				</View>
 			</View>
 		);
 	}
@@ -65,17 +94,20 @@ const styles = StyleSheet.create({
 		flexDirection: 'column'
 	},
 	protrait: {
-		flex: 1
+		flex: 1,
+		width
 	},
 	image: {
 		resizeMode: 'stretch',
-		height: 450
-	},
-	buttonListView: {
 		flex: 1
 	},
-	button: {
-		padding: 14,
+	buttonView: {
+		height: 50,
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+	buttonText: {
+		fontSize: 16,
 		color: '#FFF'
 	}
 });

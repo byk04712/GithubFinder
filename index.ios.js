@@ -6,4 +6,5 @@ import React, {
 } from 'react-native';
 
 import Index from './app/Index.js';
+
 AppRegistry.registerComponent('GithubFinder', () => Index);

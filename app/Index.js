@@ -2,7 +2,7 @@
 
 import React, { Component, StyleSheet, View } from 'react-native';
 import { Router, routerReducer, Route, Container, Animations, Schema } from 'react-native-redux-router';
-import { Provider } from 'react-redux/native';
+import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
 
@@ -20,6 +20,7 @@ import Notes from './components/Notes.js';
 import Repositories from './components/Repositories.js';
 import Web from './components/Web.js';
 import Loading from './components/Loading.js';
+import codePush from 'react-native-code-push';
 
 import { NavBar, NavBarModal, NavBarBase } from './components/NavBar.js';
 
@@ -52,7 +53,7 @@ class Index extends Component {
 	render() {
 		return (
 			<Provider store={store}>
-				{() => <MainContainer/>}
+				<MainContainer/>
 			</Provider>
 		);
 	}
@@ -73,11 +74,15 @@ class MainContainer extends Component {
                     <Route name='dashboard' component={Dashboard} title='用户信息' schema='default'/>
                     <Route name='profile' component={Profile} title='详细信息' hideNavBar={true} schema='modal'/>
                     <Route name='notes' component={Notes} title='聊天'/>
-                    <Route name='repos' component={Repositories} schema='defalut' hideNavBar={true} title='代码库'/>
+                    <Route name='repos' component={Repositories} schema='modal' hideNavBar={true} title='代码库'/>
                     <Route name='web' component={Web} schema='modal' hideNavBar={false}/>
 				</Router>
 			</View>
 		);
+	}
+
+	componentDidMount() {
+		codePush.sync();
 	}
 
 }

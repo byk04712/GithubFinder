@@ -7,6 +7,8 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.List;
 
+import com.microsoft.codepush.react.CodePush;
+
 public class MainActivity extends ReactActivity {
 
     /**
@@ -27,6 +29,15 @@ public class MainActivity extends ReactActivity {
         return BuildConfig.DEBUG;
     }
 
+    // Override the getJSBundleFile method in order to let
+    // the CodePush runtime determine where to get the JS
+    // bundle location from on each app start
+    @Override
+    protected String getJSBundleFile() {
+            return CodePush.getBundleUrl();
+    }
+
+
     /**
      * A list of packages used by the app. If the app uses additional views
      * or modules besides the default ones, add more packages here.
@@ -34,7 +45,8 @@ public class MainActivity extends ReactActivity {
     @Override
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
-            new MainReactPackage()
+            new MainReactPackage(),
+            new CodePush("IeV_sOfqrGkGoqksA49OhTUjrYCyVJqc65wzW", this, BuildConfig.DEBUG)
         );
     }
 }

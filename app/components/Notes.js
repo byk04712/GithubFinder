@@ -1,9 +1,8 @@
 'use strict';
 
-import React, { Component, StyleSheet, ListView, View, Text, TextInput } from 'react-native';
+import React, { Component, StyleSheet, ListView, View, Text, TouchableOpacity, TextInput } from 'react-native';
 import NotesObj from '../logic/NotesObj.js';
 import Badge from '../components/Badge.js';
-import Button from 'react-native-button';
 import Loading from '../components/Loading.js';
 
 class Notes extends Component {
@@ -82,11 +81,14 @@ class TypingBoard extends Component {
 				<View style={styles.inputView}>
 					<TextInput
 						style={styles.input}
+						underlineColorAndroid='transparent'
 						onChangeText={this.props.changeText}
 						value={this.props.note}
 						placeholder='输入留言内容'/>
 				</View>
-				<Button style={styles.submitBtn} onPress={this.props.submit}>提交</Button>
+				<TouchableOpacity style={styles.submitButton} onPress={this.props.submit}>
+					<Text style={styles.submitButtonText}>提交</Text>
+				</TouchableOpacity>
 			</View>
 		);
 	}
@@ -103,7 +105,7 @@ const styles = StyleSheet.create({
 		padding: 7
 	},
 	chatboard: {
-		height: 350
+		flex: 1
 	},
 	typingView: {
 		flexDirection: 'row',
@@ -116,12 +118,18 @@ const styles = StyleSheet.create({
 	input: {
 		flex: 1,
 		fontSize: 16,
-		padding: 10
+		padding: 10,
+		borderColor: 'transparent',
+		borderWidth: 0
 	},
-	submitBtn: {
+	submitButton: {
 		backgroundColor: '#48EEBC',
-		padding: 15,
 		width: 80,
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+	submitButtonText: {
+		fontSize: 16,
 		color: '#FFF'
 	}
 });

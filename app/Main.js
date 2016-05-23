@@ -1,11 +1,9 @@
 'use strict';
 
-import React, { Component, StyleSheet, View, TextInput, Dimensions, Image, Text } from 'react-native';
+import React, { Component, StyleSheet, View, TextInput, Dimensions, Image, Text, TouchableOpacity } from 'react-native';
 
-import Button from 'react-native-button';
 import SearchObj from './logic/SearchObj.js';
 import packageJson from '../package.json';
-import codePush from 'react-native-code-push';
 
 const {width, height} = Dimensions.get('window');
 
@@ -34,7 +32,7 @@ class Main extends Component {
 
 	render() {
 		return (
-			<Image style={styles.container} source={{uri:'http://cdnq.duitang.com/uploads/item/201308/05/20130805143313_3Aedy.thumb.700_0.jpeg'}}>
+			<Image style={styles.container} source={{uri:'http://img4.duitang.com/uploads/item/201307/30/20130730092753_ZMwiE.thumb.600_0.jpeg'}}>
 				<SearchView
 					{...this.state}
 					changeText={this.searchObj.changeText.bind(this.searchObj)}
@@ -43,14 +41,10 @@ class Main extends Component {
 					disable={this.state.disable}
 					message={this.state.msg}/>
 				<View style={styles.footer}>
-					<Text style={styles.version}>{'版本：' + packageJson.version}</Text>
+					<Text style={styles.version}>{'Version : ' + packageJson.version}</Text>
 				</View>
 			</Image>
 		);
-	}
-
-	componentDidMount() {
-		codePush.sync();
 	}
 	
 }
@@ -70,13 +64,16 @@ class SearchView extends Component {
 		    			defaultValue={this.props.keyword}
 		    			editable={!this.props.disable}
 		    			onChangeText={this.props.changeText}
-		    			placeholder='输入大神的github帐号'
+		    			placeholder='请输入大神的github帐号'
 		    			underlineColorAndroid='transparent'/>
 		    	</View>
-		    	<Button activeOpacity={1}
+		    	<TouchableOpacity
+		    		style={[styles.button, {backgroundColor: color}]}
+		    		activeOpacity={.8}
 		    		disabled={this.props.disable}
-		    		onPress={this.props.search}
-		    		style={[styles.btn, {backgroundColor: color}]}>开始查找</Button>
+		    		onPress={this.props.search}>
+					<Text style={styles.buttonText}>开始查找</Text>
+		    	</TouchableOpacity>
 		    </View>
 		);
 	}
@@ -128,9 +125,12 @@ const styles = StyleSheet.create({
 		borderWidth: 0,
 		fontSize: 20
 	},
-	btn: {
+	button: {
 		width: width - 40,
 		padding: 12,
+		alignItems: 'center'
+	},
+	buttonText: {
 		color: '#FFF',
 		fontSize: 20
 	},

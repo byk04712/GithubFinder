@@ -2,7 +2,6 @@
 
 import React, { Component, StyleSheet, View, ScrollView, Text, TouchableOpacity } from 'react-native';
 import Badge from './Badge.js';
-import Button from 'react-native-button';
 import RepositoriesObj from '../logic/RepositoriesObj.js';
 import Loading from '../components/Loading.js';
 
@@ -30,7 +29,12 @@ class Repositories extends Component {
 			<View style={styles.container}>
 				<Badge uri={userInfo.avatar_url} name={userInfo.name} login={userInfo.login}/>
 				<RepositoryList {...this.state} openPage={this.repositoriesObj.openPage.bind(this.repositoriesObj)}/>
-				<Button activeOpacity={.7} onPress={this.repositoriesObj.goBack.bind(this.repositoriesObj)} style={styles.backBtn}>返回</Button>
+				<TouchableOpacity
+					activeOpacity={.8}
+					onPress={this.repositoriesObj.goBack.bind(this.repositoriesObj)}
+					style={styles.backButton}>
+					<Text style={styles.backButtonText}>返回</Text>
+				</TouchableOpacity>
 			</View>
 		);
 	}
@@ -47,9 +51,11 @@ class RepositoryList extends Component {
 			component = <Loading/>
 		}
 		return (
-			<ScrollView style={styles.scrollView}>
-				{component}
-			</ScrollView>
+			<View style={{flex:1}}>
+				<ScrollView style={styles.scrollView}>
+					{component}
+				</ScrollView>
+			</View>
 		);
 	}
 
@@ -76,11 +82,11 @@ class Repository extends Component {
 
 
 const styles = StyleSheet.create({
-	cotainer: {
-		flex: 1
+	container: {
+		flex: 1,
+		flexDirection: 'column'
 	},
 	scrollView: {
-		height: 425,
 		backgroundColor: '#fff'
 	},
 	row: {
@@ -106,10 +112,15 @@ const styles = StyleSheet.create({
 		fontSize: 12,
 		color: '#555'
 	},
-	backBtn: {
-		padding: 10,
+	backButton: {
+		height: 50,
+		backgroundColor: '#999999',
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+	backButtonText: {
 		color: '#FFF',
-		backgroundColor: '#999999'
+		fontSize: 16
 	}
 });
 

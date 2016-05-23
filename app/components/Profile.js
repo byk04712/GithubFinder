@@ -1,7 +1,6 @@
 'use strict';
 
-import React, { Component, StyleSheet, ScrollView, View, Text, Image } from 'react-native';
-import Button from 'react-native-button';
+import React, { Component, StyleSheet, ScrollView, View, TouchableOpacity, Text, Image } from 'react-native';
 import ProfileObj from '../logic/ProfileObj.js';
 import Badge from '../components/Badge.js';
 
@@ -13,24 +12,16 @@ class Profile extends Component {
 
 	render() {
 		let userInfo = this.props.userInfo;
-		// var columns = {
-		// 	bio: 'BIO',
-		// 	blog: '博客',
-		// 	company: '公司',
-		// 	created_at: '创建时间',
-		// 	email: '邮箱',
-		// 	followers: '粉丝人数',
-		// 	following: '他关注过',
-		// 	location: '位置',
-		// 	type: '类型',
-		// 	public_repos: '公开代码库',
-		// 	updated_at: '最后更新时间'
-		// };
 		return (
 			<View style={styles.container}>
 				<Badge uri={userInfo.avatar_url} name={userInfo.name} login={userInfo.login}/>
 				<PropertiesList userInfo={userInfo}/>
-				<Button activeOpacity={.7} onPress={this.profileObj.goBack.bind(this.profileObj)} style={styles.backBtn}>返回</Button>
+				<TouchableOpacity
+					activeOpacity={.8}
+					onPress={this.profileObj.goBack.bind(this.profileObj)}
+					style={styles.backButton}>
+					<Text style={styles.backButtonText}>返回</Text>
+				</TouchableOpacity>
 			</View>
 		);
 	}
@@ -49,9 +40,11 @@ class PropertiesList extends Component {
 		});
 
 		return (
-			<ScrollView style={styles.propertiesScrollView}>
-				{properties}
-			</ScrollView>
+			<View style={{flex:1}}>
+				<ScrollView style={styles.propertiesScrollView}>
+					{properties}
+				</ScrollView>
+			</View>
 		);
 	}
 
@@ -93,10 +86,15 @@ const styles = StyleSheet.create({
 		color: '#666',
 		fontSize: 16
 	},
-	backBtn: {
-		padding: 10,
+	backButton: {
+		height: 50,
+		backgroundColor: '#999999',
+		justifyContent: 'center',
+		alignItems: 'center'
+	},
+	backButtonText: {
 		color: '#FFF',
-		backgroundColor: '#999999'
+		fontSize: 16
 	}
 });
 
