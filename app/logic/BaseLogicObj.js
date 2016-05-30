@@ -32,7 +32,6 @@ class BaseLogicObj {
      * 返回
      */
     goBack() {
-        console.log('Actions: ', this.getProps().routes);
         this.getProps().routes.pop();
     }
 

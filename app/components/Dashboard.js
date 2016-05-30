@@ -51,37 +51,37 @@ class ButtonList extends Component {
 	render() {
 		return (
 			<View>
-				<View style={[styles.buttonView, {backgroundColor:'#FFD147'}]}>
-					<TouchableOpacity
-						activeOpacity={.7}
-						onPress={this.props.goToProfile}>
+				<TouchableOpacity
+					activeOpacity={.7}
+					onPress={this.props.goToProfile}>
+					<View style={[styles.buttonView, {backgroundColor:'#FFD147'}]}>
 						<Text style={styles.buttonText}>查看大神信息</Text>
-					</TouchableOpacity>
-				</View>
+					</View>
+				</TouchableOpacity>
 
-				<View style={[styles.buttonView, {backgroundColor:'#00CC99'}]}>
-					<TouchableOpacity
-						activeOpacity={.7}
-						onPress={this.props.goToNotes}>
+				<TouchableOpacity
+					activeOpacity={.7}
+					onPress={this.props.goToNotes}>
+					<View style={[styles.buttonView, {backgroundColor:'#00CC99'}]}>
 						<Text style={styles.buttonText}>给大神留言</Text>
-					</TouchableOpacity>
-				</View>
+					</View>
+				</TouchableOpacity>
 
-				<View style={[styles.buttonView, {backgroundColor:'#339966'}]}>
-					<TouchableOpacity
-						activeOpacity={.7}
-						onPress={this.props.goToRepos}>
+				<TouchableOpacity
+					activeOpacity={.7}
+					onPress={this.props.goToRepos}>
+					<View style={[styles.buttonView, {backgroundColor:'#339966'}]}>
 						<Text style={styles.buttonText}>查看大神代码库</Text>
-					</TouchableOpacity>
-				</View>
+					</View>
+				</TouchableOpacity>
 
-				<View style={[styles.buttonView, {backgroundColor:'#999999'}]}>
-					<TouchableOpacity
-						activeOpacity={.7}
-						onPress={this.props.goBack}>
+				<TouchableOpacity
+					activeOpacity={.7}
+					onPress={this.props.goBack}>
+					<View style={[styles.buttonView, {backgroundColor:'#999999'}]}>
 						<Text style={styles.buttonText}>返回</Text>
-					</TouchableOpacity>
-				</View>
+					</View>
+				</TouchableOpacity>
 			</View>
 		);
 	}

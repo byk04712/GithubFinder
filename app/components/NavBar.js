@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Component, StyleSheet, Platform, View } from 'react-native';
+import React, { Component, StyleSheet, Platform, BackAndroid, ToastAndroid, View } from 'react-native';
 import NavigationBar from 'react-native-navbar';
 
 /**
@@ -8,15 +8,21 @@ import NavigationBar from 'react-native-navbar';
  */
 class NavBarBase extends Component {
 
-	onPrev() {
-		let Actions = this.props.routes;
-		// if (this.props.onPrev) {
-		// 	this.props.onPrev();
-		// 	return;
-		// }
-		if (this.props.navigator && this.props.navigator.getCurrentRoutes().length > 1) {
-			Actions.pop();
+	onBackAndroid = () => {
+		const nav = this.props.navigator;
+		const routes = nav.getCurrentRoutes();
+
+		if (routes.length > 1) {
+			nav.pop();
+			return true;
 		}
+		if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
+			//最近2秒内按过back键，可以退出应用
+			return false;
+		}
+		this.lastBackPressed = Date.now();
+		ToastAndroid.show('再按一次退出应用', ToastAndroid.SHORT);
+		return true;
 	}
 
 	render() {
@@ -56,10 +62,9 @@ class NavBarBase extends Component {
 	 * 针对android的返回键
 	 */
     componentDidMount() {
+    	// BackAndroid在iOS平台下是一个空实现，所以理论上不做这个Platform.OS === 'android'判断也是安全的
     	if (Platform.OS === 'android') {
-			React.BackAndroid.addEventListener('hardwareBackPress', function() {
-				this.onPrev();
-			});
+			BackAndroid.addEventListener('hardwareBackPress', this.onBackAndroid);
 		}
     }
 
@@ -67,8 +72,9 @@ class NavBarBase extends Component {
 	 * 针对android的返回键
 	 */
     componentWillUnmount() {
+    	// BackAndroid在iOS平台下是一个空实现，所以理论上不做这个Platform.OS === 'android'判断也是安全的
     	if (Platform.OS === 'android') {
-			React.BackAndroid.removeEventListener('hardwareBackPress');
+			BackAndroid.removeEventListener('hardwareBackPress', this.onBackAndroid);
 		}
     }
 }
@@ -76,8 +82,8 @@ class NavBarBase extends Component {
 class NavBar extends Component {
 
 	render() {
-		let Actions = this.props.routes;
-		let leftButtonConfig = {
+		const Actions = this.props.routes;
+		const leftButtonConfig = {
 			title: '返回',
 			tintColor: '#FFF',
 			handler: this.props.onPrev || Actions.pop
@@ -90,8 +96,8 @@ class NavBar extends Component {
 class NavBarModal extends Component {
 
    render() {
-		let Actions = this.props.routes;
-		let rightButtonConfig = {
+		const Actions = this.props.routes;
+		const rightButtonConfig = {
 			title: '关闭',
 			tintColor: '#FFF',
 			handler: this.props.onNext || Actions.pop

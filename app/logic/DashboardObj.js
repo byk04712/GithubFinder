@@ -7,16 +7,17 @@ class DashboardObj extends BaseLogicObj {
 	 * 查看详情
 	 */
 	goToProfile() {
-		let Actions = this.getProps().routes;
-		Actions.profile({userInfo: this.getState().userInfo});
+		const Actions = this.getProps().routes;
+		const userInfo = this.getState().userInfo;
+		Actions.profile({userInfo});
 	}
 
 	/**
 	 * 留言
 	 */
 	goToNotes() {
-		let Actions = this.getProps().routes;
-		let userInfo = this.getState().userInfo;
+		const Actions = this.getProps().routes;
+		const userInfo = this.getState().userInfo;
 		Actions.notes({title: userInfo.name, userInfo});
 	}
 
@@ -24,8 +25,8 @@ class DashboardObj extends BaseLogicObj {
 	 * 查看代码库
 	 */
 	goToRepos() {
-		let Actions = this.getProps().routes;
-		let userInfo = this.getState().userInfo;
+		const Actions = this.getProps().routes;
+		const userInfo = this.getState().userInfo;
 		Actions.repos({userInfo});
 	}
 
