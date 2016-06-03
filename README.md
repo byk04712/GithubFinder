@@ -43,7 +43,7 @@
 ---
 ### 安装步骤
 
-1.  `git clone git@github.com:byk04712/GithubFinder.git`
+1.  `git clone https://github.com/byk04712/GithubFinder.git`
 
 1.  `cd GithubFinder && npm install`
 
