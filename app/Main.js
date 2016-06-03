@@ -1,9 +1,11 @@
 'use strict';
 
-import React, { Component, StyleSheet, View, TextInput, Dimensions, Image, Text, TouchableOpacity } from 'react-native';
+import React, { Component, StyleSheet, View, TextInput, Dimensions, Image, Text, TouchableOpacity, Platform } from 'react-native';
 
 import SearchObj from './logic/SearchObj.js';
 import packageJson from '../package.json';
+import codePush from 'react-native-code-push';
+import configure from './utils/configure';
 
 const {width, height} = Dimensions.get('window');
 
@@ -25,9 +27,12 @@ class Main extends Component {
 		//初始化业务逻辑对象
 		this.searchObj = new SearchObj(this);
 
-		//下面可以继续做一些组件初始化动作，比如请求数据等等
-		//这些动作最好是业务逻辑对象提供的，这样root组件将非常干净
-		//例如这样 this.searchObj.queryData();
+		const cpKey = Platform.OS === 'ios' ? configure.code_push_ios.PRODUCTION_KEY : configure.code_push_android.PRODUCTION_KEY;
+	    codePush.sync({
+			updateDialog: true,
+			installMode: codePush.InstallMode.IMMEDIATE,
+			deploymentKey: cpKey
+	    });
 	}
 
 	render() {

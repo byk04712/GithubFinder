@@ -1,14 +1,38 @@
 # GithubFinder
 使用React Native开发的APP，支持ios和android。
 
-![项目简介](https://github.com/byk04712/GithubFinder/blob/master/introduce.gif)
+
+### 预览
+
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/introduce.gif)
+
+### IOS
+
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/ios1.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/ios2.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/ios3.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/ios4.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/ios5.png)
+
+
+### Android
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/android1.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/android2.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/android3.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/android4.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/android5.png)
+
+
+
+### Android 设备，扫码安装。
+
 
 
 ---
 ### 第三方组件
 ```json
 {    
-	"react-native-button": "^1.4.2",
+    "react-native-code-push": "^1.11.0-beta",
     "react-native-navbar": "^1.4.2",
     "react-native-redux-router": "^1.0.6",
     "redux-logger": "^2.6.1"
@@ -22,7 +46,7 @@
 
 1.  `cd GithubFinder && npm install`
 
-1.  `open ios/Github找大神.xcodeproj`
+1.  `open ios/GithubFinder.xcodeproj`
 
 
 
