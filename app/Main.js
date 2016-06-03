@@ -37,7 +37,7 @@ class Main extends Component {
 
 	render() {
 		return (
-			<Image style={styles.container} source={{uri:'http://img4.duitang.com/uploads/item/201307/30/20130730092753_ZMwiE.thumb.600_0.jpeg'}}>
+			<Image style={styles.container} source={{uri:configure.main_bg}}>
 				<SearchView
 					{...this.state}
 					changeText={this.searchObj.changeText.bind(this.searchObj)}
@@ -63,7 +63,7 @@ class SearchView extends Component {
 		let color = this.props.disable ? '#bbb' : '#00B7C3';
 		return (
 		    <View style={styles.searchContainer}>
-		    	<Text style={styles.title}>到github上寻找大神</Text>
+		    	<Text style={styles.title}>到github上寻找大神!</Text>
 		    	<View style={[styles.inputView, {borderColor: color}]}>
 		    		<TextInput style={styles.input}
 		    			defaultValue={this.props.keyword}
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
 		width,
 		alignItems: 'center',
 		paddingVertical: 30,
-		// backgroundColor: 'rgba(255,255,255,.6)'
+		backgroundColor: 'rgba(255,255,255,.6)'
 	},
 	title: {
 		fontSize: 24,
