@@ -20,7 +20,6 @@ import Notes from './components/Notes.js';
 import Repositories from './components/Repositories.js';
 import Web from './components/Web.js';
 import Loading from './components/Loading.js';
-import codePush from 'react-native-code-push';
 
 import { NavBar, NavBarModal, NavBarBase } from './components/NavBar.js';
 
@@ -79,10 +78,6 @@ class MainContainer extends Component {
 				</Router>
 			</View>
 		);
-	}
-
-	componentDidMount() {
-		codePush.sync();
 	}
 
 }

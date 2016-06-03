@@ -8,7 +8,7 @@ import NavigationBar from 'react-native-navbar';
  */
 class NavBarBase extends Component {
 
-	onBackAndroid = () => {
+	onBackAndroid() {
 		const nav = this.props.navigator;
 		const routes = nav.getCurrentRoutes();
 
@@ -64,7 +64,7 @@ class NavBarBase extends Component {
     componentDidMount() {
     	// BackAndroid在iOS平台下是一个空实现，所以理论上不做这个Platform.OS === 'android'判断也是安全的
     	if (Platform.OS === 'android') {
-			BackAndroid.addEventListener('hardwareBackPress', this.onBackAndroid);
+			BackAndroid.addEventListener('hardwareBackPress', this.onBackAndroid.bind(this));
 		}
     }
 
@@ -74,7 +74,7 @@ class NavBarBase extends Component {
     componentWillUnmount() {
     	// BackAndroid在iOS平台下是一个空实现，所以理论上不做这个Platform.OS === 'android'判断也是安全的
     	if (Platform.OS === 'android') {
-			BackAndroid.removeEventListener('hardwareBackPress', this.onBackAndroid);
+			BackAndroid.removeEventListener('hardwareBackPress', this.onBackAndroid.bind(this));
 		}
     }
 }
