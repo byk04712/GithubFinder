@@ -28,9 +28,8 @@ class Main extends Component {
 		this.searchObj = new SearchObj(this);
 
 		const cpKey = Platform.OS === 'ios' ? configure.code_push_ios.PRODUCTION_KEY : configure.code_push_android.PRODUCTION_KEY;
+
 	    codePush.sync({
-			updateDialog: true,
-			installMode: codePush.InstallMode.IMMEDIATE,
 			deploymentKey: cpKey
 	    });
 	}
