@@ -25,6 +25,7 @@
 
 
 ### Android 设备，扫码安装。
+![下载安装](https://github.com/byk04712/GithubFinder/blob/master/screenshot/qr.png)
 
 
 
