@@ -62,7 +62,7 @@ class SearchView extends Component {
 		let color = this.props.disable ? '#bbb' : '#00B7C3';
 		return (
 		    <View style={styles.searchContainer}>
-		    	<Text style={styles.title}>到github上寻找大神!</Text>
+		    	<Text style={styles.title}>到github上寻找大神</Text>
 		    	<View style={[styles.inputView, {borderColor: color}]}>
 		    		<TextInput style={styles.input}
 		    			defaultValue={this.props.keyword}
