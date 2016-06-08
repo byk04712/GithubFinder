@@ -4,8 +4,8 @@ import React, { Component, StyleSheet, View, TextInput, Dimensions, Image, Text,
 
 import SearchObj from './logic/SearchObj.js';
 import packageJson from '../package.json';
-import codePush from 'react-native-code-push';
 import configure from './utils/configure';
+import * as codePushSync from './utils/codePushSync';
 
 const {width, height} = Dimensions.get('window');
 
@@ -26,12 +26,7 @@ class Main extends Component {
 	componentWillMount() {
 		//初始化业务逻辑对象
 		this.searchObj = new SearchObj(this);
-
-		const cpKey = Platform.OS === 'ios' ? configure.code_push_ios.PRODUCTION_KEY : configure.code_push_android.PRODUCTION_KEY;
-
-	    codePush.sync({
-			deploymentKey: cpKey
-	    });
+	    codePushSync.sync();
 	}
 
 	render() {

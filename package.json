@@ -1,14 +1,14 @@
 {
   "name": "GithubFinder",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "push-android": "code-push release-react Noder android --deploymentName Staging",
-    "push-ios": "code-push release-react Noder ios --deploymentName Staging",
-    "push-android-prod": "code-push release-react Noder android --deploymentName Production",
-    "push-ios-prod": "code-push release-react Noder ios --deploymentName Production",
-    "push-key": "code-push deployment ls Noder -k"
+    "push-android": "code-push release-react GithubFinder android --deploymentName Staging",
+    "push-ios": "code-push release-react GithubFinder ios --deploymentName Staging",
+    "push-android-prod": "code-push release-react GithubFinder android --deploymentName Production",
+    "push-ios-prod": "code-push release-react GithubFinder ios --deploymentName Production",
+    "push-key": "code-push deployment ls GithubFinder -k"
   },
   "dependencies": {
     "react": "^0.14.8",

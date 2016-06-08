@@ -46,7 +46,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
-            new CodePush("TBjM9Z_keHRhHYTvPQR65ZIZ4i6CVJqc65wzW", this, BuildConfig.DEBUG)
+            new CodePush("M7wk7MAb-umaOZCw_UvNNIZU8odJVJqc65wzW", this, BuildConfig.DEBUG)
         );
     }
 }
