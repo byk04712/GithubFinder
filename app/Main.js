@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
 		width,
 		alignItems: 'center',
 		paddingVertical: 30,
-		// backgroundColor: 'rgba(255,255,255,.6)'
+		backgroundColor: 'rgba(255,255,255,.6)'
 	},
 	title: {
 		fontSize: 24,
