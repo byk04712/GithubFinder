@@ -4,7 +4,7 @@
 
 ### 预览
 
-![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/introduce.gif)
+![项目简介](https://thumbnail0.baidupcs.com/thumbnail/8556a5a45ec9365a471bdc02caa5cf8f?fid=1964161449-250528-967496453268351&time=1480388400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-B8QTADyjzUEACkuLRh0J0GYYHDs%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=7734395127797356459&dp-callid=0&size=c710_u400&quality=100)
 
 ### IOS
 
