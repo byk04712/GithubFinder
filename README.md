@@ -25,7 +25,7 @@
 
 
 ### Android 设备，扫码安装。
-![下载安装](https://github.com/byk04712/GithubFinder/blob/master/screenshot/qr.png)
+![下载安装](http://c.wotula.com/chart.php?size=32&level=H&val=https%3A%2F%2Fpan.baidu.com%2Fs%2F1mi6TFT2)
 
 
 
