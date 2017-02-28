@@ -1,0 +1,26 @@
+{
+  "name": "GithubFinder",
+  "version": "1.0.5",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "15.4.2",
+    "react-native": "0.41.2",
+    "react-native-code-push": "^1.17.1-beta",
+    "react-native-navbar": "^1.6.1",
+    "react-native-redux-router": "^1.0.7",
+    "redux-logger": "^2.8.1"
+  },
+  "devDependencies": {
+    "babel-jest": "19.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "jest": "19.0.2",
+    "react-test-renderer": "15.4.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
