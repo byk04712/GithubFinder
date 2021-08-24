@@ -5,26 +5,26 @@
 
 ### 预览
 
-![项目简介](https://raw.githubusercontent.com/byk04712/GithubFinder/master/screenshot/introduce.gif)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/introduce.gif)
 
 ---
 
 ### IOS
 
-![项目简介](https://raw.githubusercontent.com/byk04712/GithubFinder/master/screenshot/ios1.png)
-![项目简介](https://raw.githubusercontent.com/byk04712/GithubFinder/master/screenshot/ios2.png)
-![项目简介](https://raw.githubusercontent.com/byk04712/GithubFinder/master/screenshot/ios3.png)
-![项目简介](https://raw.githubusercontent.com/byk04712/GithubFinder/master/screenshot/ios4.png)
-![项目简介](https://raw.githubusercontent.com/byk04712/GithubFinder/master/screenshot/ios5.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/ios1.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/ios2.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/ios3.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/ios4.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/ios5.png)
 
 ---
 
 ### Android
-![项目简介](https://raw.githubusercontent.com/byk04712/GithubFinder/master/screenshot/android1.png)
-![项目简介](https://raw.githubusercontent.com/byk04712/GithubFinder/master/screenshot/android2.png)
-![项目简介](https://raw.githubusercontent.com/byk04712/GithubFinder/master/screenshot/android3.png)
-![项目简介](https://raw.githubusercontent.com/byk04712/GithubFinder/master/screenshot/android4.png)
-![项目简介](https://raw.githubusercontent.com/byk04712/GithubFinder/master/screenshot/android5.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/android1.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/android2.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/android3.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/android4.png)
+![项目简介](https://github.com/byk04712/GithubFinder/blob/master/screenshot/android5.png)
 
 
 ---
@@ -32,10 +32,10 @@
 
 ### Android 设备，扫码安装。iOS用户，需要按照下面的安装步骤进行体验。
 
-![下载安装](https://raw.githubusercontent.com/byk04712/GithubFinder/master/screenshot/qr.png)
+![下载安装](https://github.com/byk04712/GithubFinder/blob/master/screenshot/qr.png)
 
 
-[点我下载](https://raw.githubusercontent.com/byk04712/GithubFinder/master/app-release.apk) APK文件
+[点我下载](https://github.com/byk04712/GithubFinder/blob/master/app-release.apk) APK文件
 
 
 ---
